@@ -36,45 +36,45 @@ Dataset can be access through the link :
 https://www.kaggle.com/code/gauravmalik26/food-delivery 
 
 # 3.	🎯 OBJECTIVE
-•	Build a predictive model to estimate food delivery time based on historical data.
+•	Build a predictive model to estimate food delivery time based on historical data  
 •	Analyze the impact of different features on delivery times.
 
 # 4.	🔎 METHODOLOGY
 
 ## 	Data Preprocessing
-o	Data consistency (change data type to numeric, datetime or timedelta) 
-o	Handle missing values (fill with mean for numerical features and mode for categorical features)
+o	Data consistency (change data type to numeric, datetime or timedelta)  
+o	Handle missing values (fill with mean for numerical features and mode for categorical features)  
 o	Check for outliers using IQR 
 
 ## 	Feature Engineering
-o	Extract new features 'month', 'day_of_week' and 'is_weekend' 
-o	Calculate 'Order_prepare_time'. This is the amount of time it took for the order to be prepared by the restaurant.  It is calculated as the difference between the order pickup time and the order received time, measured in minutes.
+o	Extract new features 'month', 'day_of_week' and 'is_weekend'  
+o	Calculate 'Order_prepare_time'. This is the amount of time it took for the order to be prepared by the restaurant.  It is calculated as the difference between the order pickup time and the order received time, measured in minutes  
 o	Compute distance (in km) using geodesic method between the latitude and longitude of the restaurant and the delivery location
 
 ## 	Exploratory Data Analysis (EDA)
-o	Analyze distributions of features (univariate, bivariate and multivariate)
+o	Analyze distributions of features (univariate, bivariate and multivariate)  
 
 ## 	Data Transformation
-o	Transform categorical features  using Label Encoder and scale numerical features using Standard Scaler
+o	Transform categorical features  using Label Encoder and scale numerical features using Standard Scaler  
 
 ## 	Feature Selection 
-o	Train and compared Random Forest models using different feature sets.
-o	All Features: Trained a Random Forest model using the full feature set and evaluated performance using R²
-o	Random Forest Selected Features: Used feature selection based on Random Forest importance scores, trained a new model, and measured R²
-o	Lasso Selected Features: Applied Lasso regression for feature selection, trained a model using only the selected features, and compared R²
+o	Train and compared Random Forest models using different feature sets  
+o	All Features: Trained a Random Forest model using the full feature set and evaluated performance using R²  
+o	Random Forest Selected Features: Used feature selection based on Random Forest importance scores, trained a new model, and measured R²  
+o	Lasso Selected Features: Applied Lasso regression for feature selection, trained a model using only the selected features, and compared R²  
 
 ## 	Model Building & Evaluation
-o	Trained eight models, including Linear Regression, Ridge, Lasso, Random Forest, Gradient Boosting, SVR, XGBoost, and KNN.
-o	Evaluate the performance of each model using R² Score, Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE) 
+o	Trained eight models, including Linear Regression, Ridge, Lasso, Random Forest, Gradient Boosting, SVR, XGBoost, and KNN.  
+o	Evaluate the performance of each model using R² Score, Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE)  
 
 ## 	Hyperparameter Tuning 
-o	Tuned Random Forest, Gradient Boosting, and XGBoost (top-performing models)
-o	Compared performance using all features vs. selected features (Random Forest)
-o	Used GridSearchCV with 5-fold cross-validation to find the best hyperparameters 
-o	The best-tuned model for final predictions
+o	Tuned Random Forest, Gradient Boosting, and XGBoost (top-performing models)  
+o	Compared performance using all features vs. selected features (Random Forest)  
+o	Used GridSearchCV with 5-fold cross-validation to find the best hyperparameters   
+o	The best-tuned model for final predictions  
 
 # 5.	⚙️ RESULT 
-•	Higher R² Score when training will all features compared to training with selected features. XGBoost (0.813150), Random Forest (0.808772), Gradient Boosting (0.774242)
-•	Improved model performance after hyperparameter tuning when training will all features. XGBoost (0.821292), Random Forest (0.822633), Gradient Boosting (0.819862)
+•	Higher R² Score when training will all features compared to training with selected features. XGBoost (0.813150), Random Forest (0.808772), Gradient Boosting (0.774242)  
+•	Improved model performance after hyperparameter tuning when training will all features. XGBoost (0.821292), Random Forest (0.822633), Gradient Boosting (0.819862)  
 
 ![image](https://github.com/user-attachments/assets/684a64e3-dd73-4703-a4c8-97bb80a58a20)
